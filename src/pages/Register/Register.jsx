@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
-    
+    const [error, setError] = useState()
+    const [success, setSuccess] = useState()
     return (
         <div className="hero min-h-screen bg-base-200">
             <form
@@ -10,13 +12,19 @@ const Register = () => {
                 <div className="text-center">
                     <h1 className="text-3xl font-bold">Please Register..!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0  w-[1024px] max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name='name' placeholder="your name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo url</span>
+                            </label>
+                            <input type="photo" name='photo' placeholder="your photo" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -30,7 +38,7 @@ const Register = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <span>Show Password</span>
                             </label>
                         </div>
                         <div className="form-control mt-6">
@@ -38,6 +46,23 @@ const Register = () => {
                         </div>
                         <div className='inline-flex items-center'>
                             <span>Already have an account? </span><Link to='/login' className="btn btn-link"> Login Now.!</Link>
+                        </div>
+                        <div className=''>
+                            <button className="social flex justify-center items-center">
+                                <FaGoogle />
+                                <span
+                                    className='ml-3'
+                                > Google
+                                </span>
+                            </button>
+                            <br />
+                            <button className="social flex justify-center items-center">
+                                <FaGithub />
+                                <span
+                                    className='ml-3'
+                                > Github
+                                </span>
+                            </button>
                         </div>
                         <p className='text-red-700'>{error}</p>
                         <p className='text-green-500'>{success}</p>
