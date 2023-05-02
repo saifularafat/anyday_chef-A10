@@ -9,10 +9,10 @@
 }
 
 .active{
-    @apply text-xl font-medium hover:underline underline transition-colors duration-200 tracking-wide 
+    @apply text-xl font-medium text-btn_color bg-white py-2 px-6 hover:underline underline transition duration-200 tracking-wide 
   }
   .default{
-    @apply text-xl font-medium hover:underline transition-colors duration-200 tracking-wide
+    @apply text-xl text-white font-medium hover:underline transition-colors duration-200 tracking-wide
   }
   
 .loginStyle{
@@ -41,6 +41,9 @@
     @apply w-48 h-48 border border-white rounded-[50%]
 }
 
+.social{
+  @apply border-2 border-second_bg text-2xl font-semibold rounded-lg py-2 px-7 w-full tracking-wide
+}
 
 
 
