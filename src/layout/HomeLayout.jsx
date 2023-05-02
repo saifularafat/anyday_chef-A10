@@ -3,17 +3,14 @@ import Header from '../pages/Share/Header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../pages/Share/Footer';
 
-const Main = () => {
+const HomeLayout = () => {
     return (
         <div>
             <Header />
-            <div className='bg-second_bg min-h-[calc(100vh-140px)] pb-10'>
-                < Outlet />
-            </div>
+            <Outlet />
             <Footer />
-
         </div>
     );
 };
 
-export default Main;
+export default HomeLayout;

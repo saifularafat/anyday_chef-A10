@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navBer{
+    @apply text-xl font-medium text-white px-3 py-1 mx-1 
+    rounded-md tracking-wide transition duration-200
+    hover:bg-slate-50 hover:text-btn_color hover:rounded-md
+}
+.loginStyle{
+    @apply text-xl font-medium text-black bg-white px-4 py-2
+    ml-1 rounded-md hover:bg-btn_color hover:text-white
+    transition duration-200 tracking-wide
+}
+.visit{
+    @apply text-2xl font-semibold font-mono text-black bg-btn_color border-2 border-btn_color
+     hover:border-white tracking-wide
+     py-4 px-8 mt-4  rounded-md transition duration-200 hover:bg-transparent hover:text-white
+}
+
+.my_container{
+    @apply w-full mx-auto px-5
+}
+
+.page_banner {
+    @apply w-full mx-auto py-12 md:py-24 bg-gradient-to-r from-orange-100 via-green-100 to-slate-200 shadow-md
+  }
+  .page_banner_title {
+    @apply text-center text-2xl md:text-5xl font-semibold md:font-bold italic
+  }
+
+.main_chef{
+    @apply w-48 h-48 border border-white rounded-[50%]
+}
+
+
+
+
+/* blog section or component style */
+.blog-cart {
+    @apply border-2 border-btn_color mb-8 rounded-lg p-5 hover:-top-5 hover:-right-4
+         relative transition duration-200 md:h-72 shadow-2xl
+  }
+  .blog-question {
+    @apply text-xl md:text-3xl font-semibold pb-3
+  }
+  .blog-ans {
+    @apply text-xl text-justify
+  }
