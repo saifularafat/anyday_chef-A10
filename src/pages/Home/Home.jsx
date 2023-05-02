@@ -2,6 +2,7 @@ import React from 'react';
 import ChefSpecialize from './ChefSpecialize';
 import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
+import ChefCard from './ChefCard';
 
 const Home = () => {
 
@@ -26,6 +27,7 @@ const Home = () => {
 
             {/* Chef Specialize section */}
             <ChefSpecialize />
+            <ChefCard />
         </div>
     );
 };
