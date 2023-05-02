@@ -1,10 +1,12 @@
 import React from 'react';
-import Header from '../Share/Header';
-import banner_chef from '../../../public/banner/banner-chef1.png'
 import ChefSpecialize from './ChefSpecialize';
 import Banner from './Banner';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+
+    const masterChef = useLoaderData();
+    console.log();
     return (
         <div>
             <div>

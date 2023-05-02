@@ -6,7 +6,7 @@ import specialize1 from '../../../public/banner/site_img3.jpg'
 
 const ChefSpecialize = () => {
     return (
-        <div className='my_container mx-auto grid md:grid-cols-3 gap-5 py-20 bg-second_bg'>
+        <div className='my_container md:mx-auto mx-2 grid md:grid-cols-3 gap-5 py-20 bg-second_bg'>
             <div className='w-80 mx-auto'>
                     <img src={specialize}
                         alt=""
