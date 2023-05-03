@@ -12,7 +12,7 @@ const Login = () => {
                 <div className="text-center my-5">
                     <h1 className="md:text-5xl font-bold">Please Login..!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-[960px] max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 md:w-[960px] max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -33,9 +33,7 @@ const Login = () => {
                             <button className="btn btn-success">Login</button>
                         </div>
                         <div className='inline-flex items-center'>
-                            <span>New to auth Master? </span>
-                            <Link to='/register' className="btn btn-link"> Register
-                            </Link>
+                        <span>Dont’t Have An Account ?</span> <Link to='/register'  className="btn-link pl-2 hover:opacity-80">register</Link>
                         </div>
                         <div className=''>
                             <button className="social flex justify-center items-center">

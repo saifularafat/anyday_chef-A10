@@ -10,12 +10,15 @@ const Navber = () => {
             <div className='flex justify-between items-center bg-second_bg shadow-xl py-5 px-6'>
                 {/* logo section */}
                 <Link to='/'>
-                    <div className='relative flex items-center'>
+                    <div className='relative flex'>
                         <img
                             src={logo}
                             alt=""
                             className='h-16'
                         />
+                        <p 
+                        className='text-white pl-2 tracking-wide'
+                        >@Italian <span className='text-amber-500'>Food</span></p>
                     </div>
                 </Link>
                 {/* nav items section activities */}
@@ -65,7 +68,7 @@ const Navber = () => {
                         title='Open Menu'
                         onClick={() => setIsMenuOpen(true)}
                     >
-                        <Bars3BottomRightIcon className="h-9 w-9 text-logo" />
+                        <Bars3BottomRightIcon className="h-10 w-10 text-white" />
                     </button>
                     {
                         isMenuOpen && (
@@ -86,7 +89,7 @@ const Navber = () => {
                                             title='Close MEnu'
                                             onClick={() => setIsMenuOpen(false)}
                                         >
-                                            <XMarkIcon className="w-9" />
+                                            <XMarkIcon className="w-9 text-white" />
                                         </button>
                                     </div>
                                 </div>
@@ -94,31 +97,33 @@ const Navber = () => {
                                 <div>
                                     <nav>
                                         <ul className='space-y-4 bg-second_bg h-full'>
-                                            <li className='px-3 hover:bg-slate-200'>
+                                            <li className='px-3 text-second_bg hover:bg-btn_color'>
                                                 <Link to='/' className='default'>
                                                     Home
                                                 </Link>
                                             </li>
-                                            <li className='px-3 hover:bg-slate-200'>
+                                            <li className='px-3 hover:bg-btn_color'>
                                                 <Link to='blog' className='default'>
                                                     Blog
                                                 </Link>
                                             </li>
-                                            <li className='px-3 hover:bg-slate-200'>
+                                            <li className='px-3 hover:bg-btn_color'>
                                                 <Link to='service' className='default'>
                                                     Service
                                                 </Link>
                                             </li>
-                                            <li className='px-3 hover:bg-slate-200'>
+                                            <li className='px-3 hover:bg-btn_color'>
                                                 <Link to='contact' className='default'>
                                                     contact
                                                 </Link>
                                             </li>
-                                            <li className='px-3 mb-3 hover:bg-slate-200'>
-                                                <Link to='login' className='default'>
-                                                    Login
-                                                </Link>
-                                            </li>
+                                            <div className=' pb-10'>
+                                                <li className='px-3 hover:bg-btn_color'>
+                                                    <Link to='login' className='default'>
+                                                        Login
+                                                    </Link>
+                                                </li>
+                                            </div>
                                         </ul>
                                     </nav>
                                 </div>

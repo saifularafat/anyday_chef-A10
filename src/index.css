@@ -14,7 +14,7 @@
   .default{
     @apply text-xl text-white font-medium hover:underline transition-colors duration-200 tracking-wide
   }
-  
+   
 .loginStyle{
     @apply text-xl font-medium text-black bg-white px-4 py-2
     ml-1 rounded-md hover:bg-btn_color hover:text-white
@@ -27,7 +27,7 @@
 }
 
 .my_container{
-    @apply w-full mx-auto px-5
+    @apply w-full mx-auto
 }
 
 .page_banner {
