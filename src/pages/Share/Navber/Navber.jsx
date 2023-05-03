@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../../../public/logo/dinery_logo.png'
 import { Link, NavLink } from 'react-router-dom';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navber = () => {
+    const {user} = useContext(AuthContext)
+    console.log(user);
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
         <div className='sticky top-0 z-10'>

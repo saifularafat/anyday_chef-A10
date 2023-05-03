@@ -20,7 +20,12 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         loader: () => fetch('http://localhost:5000/chef')
-      }
+      },
+      // {
+      //   path: ':id',
+      //   element: <ChefCard />,
+      //    loader: ({ params }) => fetch(`https://the-news-dragon-server-saifularafat.vercel.app/categories/${params.id}`)
+      // }
     ]
   },
   {

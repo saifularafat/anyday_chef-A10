@@ -27,7 +27,7 @@ const Home = () => {
             {/* Chef Specialize section */}
             <ChefSpecialize />
 
-            <div className='bg-second_bg py-28 z-10 '>
+            <div className='bg-second_bg py-16 z-10 '>
                 {/* Master Chef section Title and description */}
                 <div className='text-center text-white md:w-[900px] md:mx-auto mx-3 mb-16'>
                     <h2 className=' md:text-5xl text-3xl font-serif text-black font-bold pb-4'>Master Chef</h2>
