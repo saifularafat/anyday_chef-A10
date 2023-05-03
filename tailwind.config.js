@@ -12,7 +12,7 @@ export default {
         second_btn_color: '#ececec',
         banner: '#edf1f228',
         second_bg: '#757575',
-
+        chef_text: '#111111',
       },
     },
   },

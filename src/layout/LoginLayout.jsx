@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 const LoginLayout = () => {
     return (
-        <div>
+        <div className='bg-second_bg'>
             <Header />
             <Outlet />
         </div>

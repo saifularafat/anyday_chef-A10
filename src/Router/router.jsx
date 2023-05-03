@@ -8,6 +8,8 @@ import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import HomeLayout from "../layout/HomeLayout";
+import LoginLayout from "../layout/LoginLayout";
+import Terms from "../Terms/Terms";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,12 @@ const router = createBrowserRouter([
         path: 'contact',
         element: <Contact />
       },
+    ],
+  },
+  {
+    path: '/',
+    element: <LoginLayout />,
+    children: [
       {
         path: 'login',
         element: <Login />
@@ -45,13 +53,13 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register />
+      },
+      {
+        path: '/terms',
+        element: <Terms />
       }
-    ],
-  },
-  // {
-  //   path: '/',
-  //   element: <Login
-  // }
+    ]
+  }
 ]);
 
 export default router;

@@ -84,6 +84,17 @@ const Register = () => {
                                 <span>Show Password</span>
                             </label>
                         </div>
+                        <div className='flex items-center'>
+                            <input
+                                type="checkbox"
+                                name='accept'
+                            // onClick={handlerAccepted}
+                            />
+                            <p className='pl-5'>Accept
+                                <Link to='/terms' className='text-blue-500 underline pl-1'>Terms and Condition
+                                </Link>
+                            </p>
+                        </div>
                         <div
                             className="form-control mt-6">
                             <button

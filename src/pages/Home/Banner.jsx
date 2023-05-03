@@ -5,8 +5,8 @@ const Banner = () => {
         <div>
 
             {/* banner section style */}
-            <div className='md:w-8/12 mx-auto'>
-                <div className='py-2 md:py-5 px-8 bg-banner relative top-1/2 translate-y-2/4'>
+            <div className='md:w-8/12 w-full mx-auto'>
+                <div className='py-8 md:py-5 md:px-8 bg-banner relative md:top-1/2 md:translate-y-2/4'>
                     <h2 className='text-3xl text-center md:text-6xl font-bold text-white pb-5'>Master Chef</h2>
                     <p className='text-white text-center text-lg'>The height quality, Fresh Products paired with excellent
                         craftsmanship in cooking. Le Chef was established in 1988 and has
