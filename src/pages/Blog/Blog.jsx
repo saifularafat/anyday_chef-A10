@@ -9,8 +9,11 @@ const Blog = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 my-container mt-12 relative mx-3 '>
                 <div>
                     <div className='blog-cart hover:bg-amber-200'>
-                        <h2 className='blog-question text-orange-700'>Question.1 : why the context api use?</h2>
-                        <p className='blog-ans'>Context is a special key of React that can be sent to all components without sending props, passing data through a tree.  Through this, different component data can be divided very easily.  Where data needs to be sent through nested layers.
+                        <h2 className='blog-question text-orange-700'>Question.1 : Tell us the differences between uncontrolled and controlled components?</h2>
+                        <p className='blog-ans'>
+                            The parent component's pass th.
+                            An uncontrolled component is a component that manages its own state acts as the child component's polyps. The child component simply renders state and calls functions called by the parent component. Controlled props are useful when elements have specific controls over their behavior.
+                            An uncontrolled component is a component that manages its own state internally
                         </p>
                     </div>
                     <div className='blog-cart hover:bg-rose-200'>

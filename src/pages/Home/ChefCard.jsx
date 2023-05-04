@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { HeartIcon } from '@heroicons/react/24/solid'
 
 const ChefCard = ({ chef }) => {
-    // console.log(chef);
-    const { name, chef_img, title, experian, recipe, description, like } = chef
+    const { _id,name, chef_img, title, experian, recipe, description, like } = chef
+
     return (
         <div className="container mx-auto card bg-slate-500 border py-6 shadow-xl px-2 relative">
             <div>
@@ -38,7 +38,7 @@ const ChefCard = ({ chef }) => {
                 <p className='text-white px-2'><span className='pr-2'>Description:</span>{description}</p>
 
                 <div className='bottom-0'>
-                    <Link to='blog'>
+                    <Link to={`/chef/${_id}`}>
                         <button className='visit w-full relative bottom-0'>View Chef</button>
                     </Link>
                 </div>

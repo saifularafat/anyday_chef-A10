@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { handler } from 'daisyui';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
@@ -28,26 +28,31 @@ const Register = () => {
         const photo = from.photo.value;
         const email = from.email.value;
         const password = from.password.value;
-        console.log(name, photo, email, password);
+        const confirm = from.confirm.value;
+        console.log(name, photo, email, password, confirm);
 
         setError('');
         setSuccess('');
 
         // * validation password
+        if (password !== confirm) {
+            return toast.error('Your password did not match..!')
+           
+        }
         if (!/(?=.*?[A-Z])/.test(password)) {
-            setError('please add at least one Capital letter!')
+            toast.error('please add at least one Capital letter!')
             return;
         }
         else if (!/(?=.*?[0-9])/.test(password)) {
-            setError('please add by two number.!')
+            toast.error('please add by two number.!')
             return;
         }
         else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
-            setError('please at least one special symbol.!')
+            toast.error('please at least one special symbol.!')
             return;
         }
         else if (password.length < 6) {
-            setError('please your password by 6 Characters.!')
+            toast.error('please your password by 6 Characters.!')
             return;
         }
 
@@ -55,11 +60,12 @@ const Register = () => {
             .then(result => {
                 const create = result.user;
                 console.log(create);
-                setSuccess('your registration successfully..!')
+                toast.success('your registration successfully..!')
                 from.reset();
             })
             .catch(error => {
                 console.log(error);
+                toast.error(error.message)
             })
     }
 
@@ -156,6 +162,7 @@ const Register = () => {
                                 className="input input-bordered" />
                         </div>
                         <div className="form-control">
+                            <p className='text-red-700'>{error}</p>
                             <label className="label">
                                 <span
                                     className="label-text">
@@ -167,6 +174,22 @@ const Register = () => {
                                 name='password'
                                 required
                                 placeholder="password"
+                                className="input input-bordered" />
+
+                        </div>
+                        <div className="form-control">
+                            <p className='text-red-700'>{error}</p>
+                            <label className="label">
+                                <span
+                                    className="label-text">
+                                    Confirm
+                                </span>
+                            </label>
+                            <input
+                                type={showPassword ? 'text' : "password"}
+                                name='confirm'
+                                required
+                                placeholder="confirm password"
                                 className="input input-bordered" />
                             <p
                                 className='py-2'
@@ -230,7 +253,6 @@ const Register = () => {
                                 </span>
                             </button>
                         </div>
-                        <p className='text-red-700'>{error}</p>
                         <p className='text-green-500'>{success}</p>
                     </div>
                 </div>

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ChefSpecialize from './ChefSpecialize';
 import Banner from './Banner';
-import { useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ChefCard from './ChefCard';
 
 const Home = () => {
-    const masterChef = useLoaderData();
-    // console.log(masterChef);
+    const [masterChef, setMasterChef] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/chef')
+            .then(res => res.json())
+            .then(data => setMasterChef(data))
+            .catch(error => console.log(error));
+    },[])
+
     return (
         <div>
             <div>
@@ -39,7 +46,11 @@ const Home = () => {
                         masterChef.map(chef => <ChefCard
                             key={chef._id}
                             chef={chef}
-                        ></ChefCard>)
+                        >
+                            <Link to={`/${chef._id}`}>
+
+                            </Link>
+                        </ChefCard>)
                     }
                 </div>
             </div>

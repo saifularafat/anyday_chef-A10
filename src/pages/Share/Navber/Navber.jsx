@@ -1,13 +1,32 @@
 import React, { useContext, useState } from 'react';
 import logo from '../../../../public/logo/dinery_logo.png'
 import { Link, NavLink } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { FaUserCircle } from 'react-icons/fa';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navber = () => {
-    const {user} = useContext(AuthContext)
-    console.log(user);
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { user, logOut, loader } = useContext(AuthContext);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    if (loader) {
+        return (
+            <div className='text-center py-8 bg-header_bg'>
+                <span className="pl-3 text-3xl text-white">
+                    L<span className='text-red-600 font-serif'>o</span>ading......
+                </span>
+            </div >
+        )
+    }
+    const handlerSignOut = () => {
+        logOut()
+            .then(
+                toast.success('sign out successful.')
+            )
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
     return (
         <div className='sticky top-0 z-10'>
             <div className='flex justify-between items-center bg-second_bg shadow-xl py-5 px-6'>
@@ -19,8 +38,8 @@ const Navber = () => {
                             alt=""
                             className='h-16'
                         />
-                        <p 
-                        className='text-white pl-2 tracking-wide'
+                        <p
+                            className='text-white pl-2 tracking-wide'
                         >@Italian <span className='text-amber-500'>Food</span></p>
                     </div>
                 </Link>
@@ -55,13 +74,30 @@ const Navber = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to='login'
-                            className={({ isActive }) => (isActive ? 'active' : 'default  bg-btn_color py-2 px-6')}>
-                            Login
-                        </NavLink>
+                        {
+                            user ?
+                                <span>
+                                    <span className='pr-2 inline-flex items-center'>{user?.name}
+                                        <Link to='/'>
+                                            <FaUserCircle className='w-8 h-8 top-16 text-white' />
+                                        </Link>
+                                    </span>
+                                    <button
+                                        className='default bg-btn_color hover:bg-transparent transition duration-200 rounded-md border py-2 px-6'
+                                        onClick={handlerSignOut}>
+                                        Log Out
+                                    </button>
+                                </span> :
+                                <NavLink
+                                    to='login'
+                                    className={({ isActive }) => (isActive ? 'active' : 'default  bg-btn_color py-2 px-6')}>
+                                    Login
+                                </NavLink>
+                        }
                     </li>
                 </ul>
+
+
 
                 {/* mobile bar section */}
                 <div className='md:hidden'>
@@ -135,7 +171,7 @@ const Navber = () => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

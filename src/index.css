@@ -56,10 +56,17 @@
   @apply text-center text-2xl md:text-5xl font-semibold md:font-bold italic
 }
 
+
+.foodbtn {
+  @apply bg-amber-600 flex items-center text-2xl font-serif font-semibold
+          tracking-wider border rounded-lg py-2 px-2
+          hover:bg-red-600 hover:text-white transition duration-200
+}
+
 /* blog section or component style */
 .blog-cart {
     @apply border-2 border-btn_color mb-8 rounded-lg p-5 hover:-top-5 hover:-right-4
-         relative transition duration-200 md:h-80 shadow-2xl
+         relative transition duration-200 md:h-96 shadow-2xl
   }
   .blog-question {
     @apply text-xl md:text-3xl font-semibold pb-3

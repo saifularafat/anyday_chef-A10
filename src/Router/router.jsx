@@ -10,6 +10,8 @@ import Register from "../pages/Register/Register";
 import HomeLayout from "../layout/HomeLayout";
 import LoginLayout from "../layout/LoginLayout";
 import Terms from "../Terms/Terms";
+import PrivateRouter from "./PrivateRouter";
+import ChefDetails from "../pages/Share/ChefDetails/ChefDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,13 +21,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/chef')
       },
-      // {
-      //   path: ':id',
-      //   element: <ChefCard />,
-      //    loader: ({ params }) => fetch(`https://the-news-dragon-server-saifularafat.vercel.app/categories/${params.id}`)
-      // }
+      {
+        path: 'chef/:id',
+        element: <ChefDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+      }
     ]
   },
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'service',
-        element: <Service />
+        element:<PrivateRouter><Service /></PrivateRouter>
       },
       {
         path: 'contact',
