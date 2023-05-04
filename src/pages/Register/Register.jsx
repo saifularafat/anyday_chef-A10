@@ -1,14 +1,98 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { handler } from 'daisyui';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+
+
+
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const Register = () => {
     const [error, setError] = useState()
     const [success, setSuccess] = useState()
+    const [showPassword, setShowPassword] = useState(false);
+
+    // Auth Provider component destructuring
+    const { setUser, createUser, googleandgithub } = useContext(AuthContext);
+
+
+
+    // Register from information and handler
+    const handlerRegister = event => {
+        event.preventDefault();
+        const from = event.target
+        const name = from.name.value;
+        const photo = from.photo.value;
+        const email = from.email.value;
+        const password = from.password.value;
+        console.log(name, photo, email, password);
+
+        setError('');
+        setSuccess('');
+
+        // * validation password
+        if (!/(?=.*?[A-Z])/.test(password)) {
+            setError('please add at least one Capital letter!')
+            return;
+        }
+        else if (!/(?=.*?[0-9])/.test(password)) {
+            setError('please add by two number.!')
+            return;
+        }
+        else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+            setError('please at least one special symbol.!')
+            return;
+        }
+        else if (password.length < 6) {
+            setError('please your password by 6 Characters.!')
+            return;
+        }
+
+        createUser(email, password)
+            .then(result => {
+                const create = result.user;
+                console.log(create);
+                setSuccess('your registration successfully..!')
+                from.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    // google login handler
+    const handlerGoogle = () => {
+        googleandgithub(googleProvider)
+            .then(result => {
+                const googleLogged = result.user;
+                setSuccess('your registration successfully..!')
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+            })
+    }
+    // github login handler
+    const handlerGithub = () => {
+        googleandgithub(githubProvider)
+            .then(result => {
+                const gitLogged = result.user;
+                setSuccess('your registration successfully..!')
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+
+            })
+    }
+
     return (
         <div
             className="hero min-h-screen bg-second_bg">
-            <form
+            <form onSubmit={handlerRegister}
                 className="hero-content flex-col">
                 <div
                     className="text-center my-7">
@@ -25,6 +109,7 @@ const Register = () => {
                         <div
                             className="form-control">
                             <label
+                                aria-required
                                 className="label">
                                 <span
                                     className="label-text">
@@ -34,6 +119,7 @@ const Register = () => {
                             <input
                                 type="text"
                                 name='name'
+                                required
                                 placeholder="your name"
                                 className="input input-bordered" />
                         </div>
@@ -50,6 +136,7 @@ const Register = () => {
                                 type="photo"
                                 name='photo'
                                 placeholder="your photo"
+                                required
                                 className="input input-bordered" />
                         </div>
                         <div
@@ -64,6 +151,7 @@ const Register = () => {
                             <input
                                 type="email"
                                 name='email'
+                                required
                                 placeholder="your email"
                                 className="input input-bordered" />
                         </div>
@@ -75,19 +163,26 @@ const Register = () => {
                                 </span>
                             </label>
                             <input
-                                type="password"
+                                type={showPassword ? 'text' : "password"}
                                 name='password'
+                                required
                                 placeholder="password"
                                 className="input input-bordered" />
-                            <label
-                                className="label">
-                                <span>Show Password</span>
-                            </label>
+                            <p
+                                className='py-2'
+                                onClick={() =>
+                                    setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <span>Hide Password</span>
+                                        : <span>Show Password</span>
+                                }
+                            </p>
                         </div>
                         <div className='flex items-center'>
                             <input
                                 type="checkbox"
                                 name='accept'
+                                required
                             // onClick={handlerAccepted}
                             />
                             <p className='pl-5'>Accept
@@ -114,6 +209,7 @@ const Register = () => {
                         </div>
                         <div className='mt-2'>
                             <button
+                                onClick={handlerGoogle}
                                 className="social flex justify-center 
                                 items-center">
                                 <FaGoogle />
@@ -124,6 +220,7 @@ const Register = () => {
                             </button>
                             <br />
                             <button
+                                onClick={handlerGithub}
                                 className="social flex justify-center 
                                 items-center">
                                 <FaGithub />

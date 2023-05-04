@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const Login = () => {
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
     const [showPassword, setShowPassword] = useState(false);
+
+// Auth Provider component destructuring
+    const { setUser, login, googleandgithub } = useContext(AuthContext)
 
     // login from information and handler
     const handlerLogin = event => {
@@ -15,6 +23,38 @@ const Login = () => {
         const password = from.password.value;
         console.log(email, password);
 
+        login(email, password)
+            .then(result => {
+                const logged = result.user;
+                setUser(logged)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    // google login handler
+    const handlerGoogle = () => {
+        googleandgithub(googleProvider)
+            .then(result => {
+                const googleLogged = result.user;
+                console.log('google', googleLogged);
+                setUser(googleLogged)
+            })
+            .catch(error => {
+                // console.log(error);
+            })
+    }
+    // github login handler
+    const handlerGithub = () => {
+        googleandgithub(githubProvider)
+            .then(result => {
+                const gitLogged = result.user;
+                setUser(gitLogged)
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 
@@ -48,8 +88,8 @@ const Login = () => {
                                 </span>
                             </label>
                             <input
-                                type={showPassword ? 'text' 
-                                : "password"}
+                                type={showPassword ? 'text'
+                                    : "password"}
                                 name='password' placeholder="password" className="input input-bordered" />
                             <label
                                 className="label">
@@ -83,6 +123,7 @@ const Login = () => {
                         <div
                             className=''>
                             <button
+                                onClick={handlerGoogle}
                                 className="social flex justify-center items-center">
                                 <FaGoogle />
                                 <span
@@ -91,7 +132,9 @@ const Login = () => {
                                 </span>
                             </button>
                             <br />
-                            <button className="social flex justify-center items-center">
+                            <button
+                                onClick={handlerGithub}
+                                className="social flex justify-center items-center">
                                 <FaGithub />
                                 <span
                                     className='ml-3'
