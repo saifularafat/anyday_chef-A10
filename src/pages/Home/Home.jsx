@@ -8,7 +8,7 @@ const Home = () => {
     const [masterChef, setMasterChef] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://chef-recipe-server-saifularafat.vercel.app/chef')
             .then(res => res.json())
             .then(data => setMasterChef(data))
             .catch(error => console.log(error));

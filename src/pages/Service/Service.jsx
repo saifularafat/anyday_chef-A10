@@ -10,11 +10,10 @@ const Service = () => {
                 height: '60vh',
                 width: "100%"
             }}>
-                <h2 className='page_banner-title text-white md:py-28'>Home/Service</h2>
+                <h2 className='page_banner-title md:text-white text-black py-10 md:py-28'>Home/Service</h2>
             </div>
 
-
-            <div className='bg-black py-20'>
+            <div className='bg-black md:py-20'>
                 <div className='md:w-[1160px] mx-auto'>
                     <div className='bg-black md:w-96 mx-auto text-center mb-10 '>
                         <p className='contact-title italic'>Starter Menu</p>
@@ -23,7 +22,7 @@ const Service = () => {
                     </div>
                     <div className='container mx-auto md:flex mt-4 gap-10'>
                         <div className='md:w-full border-r-2'>
-                            <div className='bl-6'>
+                            <div className='mx-4'>
                                 <h2 className='text-2xl text-white font-serif pb-1'>* Raw Scallops from Erquy <span className='pl-5'>$32.08</span></h2>
                                 <p className='text-lg text-white pb-3'>Candied Jerusalem artichokes, truffle</p>
                                 <h2 className='text-2xl text-white font-serif pb-1'>** Greek Salab <span className='pl-5'>$34.95</span></h2>
@@ -35,7 +34,7 @@ const Service = () => {
                             </div>
                         </div>
                         <div className='md:w-full'>
-                            <div className='bl-6'>
+                            <div className='mx-4'>
                                 <h2 className='text-2xl text-white font-serif pb-1'>* Raw Scallops from Erquy <span className='pl-5'>$32.08</span></h2>
                                 <p className='text-lg text-white pb-3'>Candied Jerusalem artichokes, truffle</p>
                                 <h2 className='text-2xl text-white font-serif pb-1'>** Greek Salab <span className='pl-5'>$34.95</span></h2>
@@ -58,7 +57,7 @@ const Service = () => {
                         </div>
                         <div className='container mx-auto md:flex mt-4 gap-10'>
                             <div className='md:w-full border-r-2'>
-                                <div className='bl-6'>
+                                <div className='mx-4'>
                                     <h2 className='text-2xl text-white font-serif pb-1'>* Raw Scallops from Erquy <span className='pl-5'>$32.08</span></h2>
                                     <p className='text-lg text-white pb-3'>Candied Jerusalem artichokes, truffle</p>
                                     <h2 className='text-2xl text-white font-serif pb-1'>** Greek Salab <span className='pl-5'>$34.95</span></h2>
@@ -70,7 +69,7 @@ const Service = () => {
                                 </div>
                             </div>
                             <div className='md:w-full'>
-                                <div className='bl-6'>
+                                <div className='mx-4'>
                                     <h2 className='text-2xl text-white font-serif pb-1'>* Raw Scallops from Erquy <span className='pl-5'>$32.08</span></h2>
                                     <p className='text-lg text-white pb-3'>Candied Jerusalem artichokes, truffle</p>
                                     <h2 className='text-2xl text-white font-serif pb-1'>** Greek Salab <span className='pl-5'>$34.95</span></h2>
@@ -82,7 +81,6 @@ const Service = () => {
                                 </div>
                             </div>
                             <div>
-
                             </div>
                         </div>
 

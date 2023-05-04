@@ -10,7 +10,7 @@ const Blog = () => {
                 height: '60vh',
                 width: "100%"
             }}>
-                <h2 className='page_banner-title md:pt-32 pt-24 '>Home/Blog</h2>
+                <h2 className='page_banner-title md:pt-32 pt-24 text-black font-bold '>Home/Blog</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 my-container mt-12 relative mx-3 py-14'>
                 <div>
@@ -23,19 +23,20 @@ const Blog = () => {
                         </p>
                     </div>
                     <div className='blog-cart hover:bg-rose-200'>
-                        <h2 className='blog-question text-blue-600'>Question.2 : What is react custom hook?</h2>
-                        <p className='blog-ans'>A custom hook is a hook that can be used over and over again in different locations as needed.  Custom hooks can call other hooks.  For example, custom hooks are used to handle data retrieval, form filling, and key animations.  Custom hooks are used consistently.
+                        <h2 className='blog-question text-blue-600'>Question.2 : How to validate React props using PropTypes?</h2>
+                        <p className='blog-ans'>Prop Types passed from prop-types can be used to validate props passed to an element. When a prop does not match its prop types, a warning will be logged to the console. Using prop types to validate props will catch bugs and keep the code safe.
                         </p>
                     </div>
                 </div>
                 <div>
                     <div className='blog-cart hover:bg-gray-300 hover:text-stone-700'>
-                        <h2 className='blog-question text-green-500'>Question.3 : What is the useRef ?</h2>
-                        <p className='blog-ans'>The useRef hook in React can reference many objects that can change anything.  useRef is used to persist a value between renders.  The useref hook is used to create a class component variable as well as its components.  Updating values ​​stored in the useref store may not trigger a re-render.  Used to store  callback functions.</p>
+                        <h2 className='blog-question text-green-500'>Question.3 : Tell us the difference between nodejs and express js.?</h2>
+                        <p className='blog-ans'>node.js is used to run JavaScript code outside of a web browser. And express. js is a web application framework built on top of node.js and provides a set of API creation tools. node.js is a runtime environment, where express. js is a framework built on top of node.js. node.js provides low-level APIs for building network applications, while express.js provides a high-level set of APIs.
+                        </p>
                     </div>
                     <div className='blog-cart hover:bg-indigo-300'>
-                        <h2 className='blog-question text-fuchsia-600'>Question.4 : What is the useMemo ?</h2>
-                        <p className='blog-ans'>In React, the useMemo hook is used to remember expensive computations so that they can be run again as needed. Memoization is a technique that involves the function's result so that if it is called again with the same argument, the useMemo hook is arguments: one is a function and the other is an array.</p>
+                        <h2 className='blog-question text-fuchsia-600'>Question.4 : What is a custom hook, and why will you create a custom hook?</h2>
+                        <p className='blog-ans'>A custom hook is a function of React that makes it reusable using one or more built-in hooks. UseEffect hooks to retrieve data from the api, handling the loading state using useState and useEffect. These two hooks load data and return data. Custom hooks can be or have been used for a range of data fetching, caching, authentication, and more.</p>
                     </div>
                 </div>
             </div>

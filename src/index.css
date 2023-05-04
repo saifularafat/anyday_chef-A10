@@ -65,7 +65,7 @@
 
 /* blog section or component style */
 .blog-cart {
-    @apply border-2 border-btn_color mb-8 rounded-lg p-5 bg-[#1e1b1b] hover:-top-5 hover:-right-4 hover:text-black text-white
+    @apply border-2 border-btn_color mb-8 rounded-lg p-5 bg-[#1e1b1b] md:hover:-top-3 hover:-top-2 md:hover:-right-2 hover:-right-2 hover:text-black text-white
          relative transition duration-200 md:h-96 shadow-2xl
   }
   .blog-question {
