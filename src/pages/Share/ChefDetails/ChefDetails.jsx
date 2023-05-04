@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Food from './Food';
+import Chef from './Chef';
 
 const ChefDetails = () => {
 
@@ -15,6 +16,9 @@ const ChefDetails = () => {
     }, [])
     return (
         <div className='bg-slate-500'>
+            <div>
+                <Chef />
+            </div>
             <div className=' grid md:grid-cols-3 gap-5'>
                 {
                     chefFood.map(food => <Food

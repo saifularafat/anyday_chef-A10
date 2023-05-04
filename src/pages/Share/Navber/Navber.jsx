@@ -9,15 +9,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 const Navber = () => {
     const { user, logOut, loader } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    if (loader) {
-        return (
-            <div className='text-center py-8 bg-header_bg'>
-                <span className="pl-3 text-3xl text-white">
-                    L<span className='text-red-600 font-serif'>o</span>ading......
-                </span>
-            </div >
-        )
-    }
+
     const handlerSignOut = () => {
         logOut()
             .then(
@@ -156,12 +148,23 @@ const Navber = () => {
                                                     contact
                                                 </Link>
                                             </li>
+
                                             <div className=' pb-10'>
-                                                <li className='px-3 hover:bg-btn_color'>
-                                                    <Link to='login' className='default'>
-                                                        Login
-                                                    </Link>
-                                                </li>
+                                                {
+                                                    user ? <li className=' hover:bg-btn_color'>
+                                                        <button
+                                                            className='default px-3'
+                                                            onClick={handlerSignOut}>
+                                                            Log Out
+                                                        </button>
+                                                    </li>
+                                                        :
+                                                        <li className='px-3 hover:bg-btn_color'>
+                                                            <Link to='login' className='default'>
+                                                                Login
+                                                            </Link>
+                                                        </li>
+                                                }
                                             </div>
                                         </ul>
                                     </nav>

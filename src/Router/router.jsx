@@ -24,9 +24,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'chef/:id',
-        element: <ChefDetails />,
+        element: <PrivateRouter><ChefDetails /></PrivateRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
-      }
+      },
     ]
   },
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'service',
-        element:<PrivateRouter><Service /></PrivateRouter>
+        element: <PrivateRouter><Service /></PrivateRouter>
       },
       {
         path: 'contact',

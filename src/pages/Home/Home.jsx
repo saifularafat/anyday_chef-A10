@@ -37,7 +37,7 @@ const Home = () => {
             <div className='bg-second_bg py-16 z-10 '>
                 {/* Master Chef section Title and description */}
                 <div className='text-center text-white md:w-[900px] md:mx-auto mx-3 mb-16'>
-                    <h2 className=' md:text-5xl text-3xl font-serif text-black font-bold pb-4'>Master Chef</h2>
+                    <h2 className=' md:text-5xl text-3xl font-serif text-black font-bold pb-4'> Master Chefs</h2>
                     <p className=''>programma non presenta conduttori: le puntate sono introdotte e chiuse dalla voce fuori campo di Simone D'Andrea e commentate da una voce femminile Luisa Ziliotto per le prime cinque edizioni, Stefania Nali per la sesta e la settima e Ilaria Egitto dall'ottava</p>
                 </div>
 
