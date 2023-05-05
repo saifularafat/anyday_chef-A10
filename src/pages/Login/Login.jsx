@@ -18,18 +18,11 @@ const Login = () => {
     // Auth Provider component destructuring
     const { user, loader, setUser, login, googleandgithub, logOut } = useContext(AuthContext)
 
-    if (loader) {
-        return (
-            <div className='text-center py-24'>
-                <span className="pl-3 text-3xl  ">
-                    L<span className='text-red-600 text-5xl font-serif'>o</span>ading......
-                </span>
-            </div >
-        )
-    }
+
 
     // login from information and handler
     const handlerLogin = event => {
+
         event.preventDefault()
         const form = event.target
         const email = form.email.value;
@@ -41,6 +34,16 @@ const Login = () => {
                 const logged = result.user;
                 toast.success('Wow! login successful!')
                 navigate(from, { replace: true });
+                
+                if (loader) {
+                    return (
+                        <div className='text-center py-24'>
+                            <span className="pl-3 text-3xl  ">
+                                L<span className='text-red-600 text-5xl font-serif'>o</span>ading......
+                            </span>
+                        </div >
+                    )
+                }
             })
             .catch(error => {
                 console.log(error);

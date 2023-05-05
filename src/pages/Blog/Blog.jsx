@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
+import banner from '../../assets/banner/banner7.jpg'
 
 const Blog = () => {
+    const ref = useRef();
     return (
         <div>
             <div style={{
-                backgroundImage: ['url(../../../../../public/banner/banner7.jpg'],
+                backgroundImage: `url(${banner})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: 'cover',
                 height: '60vh',
@@ -12,7 +15,7 @@ const Blog = () => {
             }}>
                 <h2 className='page_banner-title md:pt-32 pt-24 text-black font-bold '>Home/Blog</h2>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 my-container mt-12 relative mx-3 py-14'>
+            <div  ref={ref} className='grid grid-cols-1 md:grid-cols-2 gap-8 my-container mt-12 relative mx-3 py-14'>
                 <div>
                     <div className='blog-cart hover:bg-amber-200'>
                         <h2 className='blog-question text-orange-700'>Question.1 : Tell us the differences between uncontrolled and controlled components?</h2>
@@ -39,6 +42,10 @@ const Blog = () => {
                         <p className='blog-ans'>A custom hook is a function of React that makes it reusable using one or more built-in hooks. UseEffect hooks to retrieve data from the api, handling the loading state using useState and useEffect. These two hooks load data and return data. Custom hooks can be or have been used for a range of data fetching, caching, authentication, and more.</p>
                     </div>
                 </div>
+            </div>
+
+            <div className='text-center'>
+                <ReactToPrint trigger={() =><button className='printbtn'>Print</button>} content={()=> ref.current} />
             </div>
         </div>
     );

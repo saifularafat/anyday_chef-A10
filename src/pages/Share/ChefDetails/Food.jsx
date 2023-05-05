@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { toast } from 'react-hot-toast'; import { Rating } from '@smastrom/react-rating';
+import { Toaster, toast } from 'react-hot-toast'; 
+import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { HeartIcon } from '@heroicons/react/24/solid'
 
 const Food = ({ food }) => {
-    const { id, chef_id, details, name, image, like, rating } = food
+    const { details, name, image, like, rating } = food
 
     const [disabledbtn, setDisabledbtn] = useState(false)
 
     const handlerToast = () => {
-        alert('Food Added')
-        toast.success('added')
+        toast.success('Wow Add Food.!')
         setDisabledbtn(true)
     }
     return (

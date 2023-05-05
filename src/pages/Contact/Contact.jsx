@@ -1,11 +1,12 @@
 import React from 'react';
+import banner from '../../assets/banner/banner4.jpg'
 import { FaMapMarked, FaPhoneAlt, FaEnvelope, FaLocationArrow } from 'react-icons/fa';
 
 const Contact = () => {
     return (
         <div>
             <div style={{
-                backgroundImage: ['url(../../../../../public/banner/banner4.jpg)'],
+                backgroundImage: `url(${banner})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: 'cover',
                 height: '60vh',

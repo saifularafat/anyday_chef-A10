@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/react-flicking": "^4.10.9",
     "@heroicons/react": "^2.0.17",
     "@smastrom/react-rating": "^1.3.1",
     "daisyui": "^2.51.6",
     "firebase": "^9.21.0",
+    "keen-slider": "^6.8.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -21,6 +23,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.0",
+    "react-to-print": "^2.14.12",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {

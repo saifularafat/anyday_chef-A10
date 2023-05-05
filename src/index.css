@@ -84,3 +84,9 @@
   .contact-title{
     @apply font-serif text-xl text-btn_color pb-2
   }
+
+  .printbtn{
+    @apply bg-btn_color border rounded-lg text-black text-2xl font-bold py-3 px-7 
+      transition duration-200 tracking-wide
+      hover:bg-transparent hover:text-white hover:border-btn_color
+  }

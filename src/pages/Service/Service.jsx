@@ -1,10 +1,11 @@
 import React from 'react';
+import banner from '../../assets/banner/banner6.jpg'
 
 const Service = () => {
     return (
         <div>
             <div style={{
-                backgroundImage: ['url(../../../../../public/banner/banner6.jpg)'],
+                backgroundImage: `url(${banner})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: '100%',
                 height: '60vh',

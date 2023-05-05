@@ -4,6 +4,7 @@ import Banner from './Banner';
 import { Link } from 'react-router-dom';
 import ChefCard from './ChefCard';
 
+
 const Home = () => {
     const [masterChef, setMasterChef] = useState([]);
 
@@ -12,24 +13,12 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setMasterChef(data))
             .catch(error => console.log(error));
-    },[])
+    }, [])
 
     return (
         <div>
-            <div>
-                <div style={{
-                    backgroundImage: ['url(../../../../../public/banner/banner.jpg)'],
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: 'cover',
-                    height: '100vh',
-                    width: "100%"
-                }}>
-
-                    {/* Banner section component*/}
-                    <Banner />
-
-                </div>
-            </div>
+            {/* banner section style and component */}
+           <Banner />
 
             {/* Chef Specialize section */}
             <ChefSpecialize />

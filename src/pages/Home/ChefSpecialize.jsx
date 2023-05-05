@@ -1,7 +1,7 @@
 import React from 'react';
-import banner_chef from '../../../public/banner/banner-chef1.png'
-import specialize from '../../../public/banner/site_img.jpg'
-import specialize1 from '../../../public/banner/site_img1.jpg'
+import banner_chef from '../../../src/assets/banner/banner-chef1.png'
+import specialize from '../../../src/assets/banner/site_img.jpg'
+import specialize1 from '../../../src/assets/banner/site_img1.jpg'
 
 
 const ChefSpecialize = () => {

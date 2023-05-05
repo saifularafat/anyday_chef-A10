@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import logo from '../../../../public/logo/dinery_logo.png'
+import logo from '../../../../src/assets/logo/dinery_logo.png'
 import { Link, NavLink } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { FaUserCircle } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const Navber = () => {
     const handlerSignOut = () => {
         logOut()
             .then(
-                toast.success('sign out successful.')
+                toast.success('log out successful.')
             )
             .catch(error => {
                 toast.error(error.message)
@@ -69,7 +69,7 @@ const Navber = () => {
                         {
                             user ?
                                 <span>
-                                    <span className='pr-2 inline-flex items-center'>{user?.name}
+                                    <span className='pr-2 inline-flex items-center'>
                                         <Link to='/'>
                                             <FaUserCircle className='w-8 h-8 top-16 text-white' />
                                         </Link>
@@ -79,12 +79,18 @@ const Navber = () => {
                                         onClick={handlerSignOut}>
                                         Log Out
                                     </button>
-                                </span> :
-                                <NavLink
-                                    to='login'
-                                    className={({ isActive }) => (isActive ? 'active' : 'default  bg-btn_color py-2 px-6')}>
-                                    Login
-                                </NavLink>
+                                </span>
+                                :
+                                <div className='flex'>
+                                    <Link to='/' className='pr-3 '>
+                                        <FaUserCircle className='w-8 h-8 top-16 text-white' />
+                                    </Link>
+                                    <NavLink
+                                        to='login'
+                                        className={({ isActive }) => (isActive ? 'active' : 'default  bg-btn_color py-2 px-6')}>
+                                        Login
+                                    </NavLink>
+                                </div>
                         }
                     </li>
                 </ul>
