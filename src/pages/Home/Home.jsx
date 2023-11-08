@@ -17,7 +17,7 @@ const Home = () => {
 
     return (
         <div>
-            {/* banner section style and component */}
+            {/* banner section style and component is completed */}
            <Banner />
 
             {/* Chef Specialize section */}
